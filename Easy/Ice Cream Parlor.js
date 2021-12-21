@@ -66,4 +66,18 @@ Link:
 
 // Solutions:
 // Solution 1:
+const icecreamParlor = (m, arr) => {
+  let result = [];
+  let cost = new Map();
+  for (let i = 1; i <= arr.length; i++) {
+    let c = m - arr[i - 1];
+    if (cost.has(c)) {
+      result.push(cost.get(c));
+      result.push(i);
+      break;
+    } else cost.set(arr[i - 1], i);
+  }
+  return result;
+};
+
 
