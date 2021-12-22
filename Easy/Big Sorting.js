@@ -3,7 +3,8 @@ Title:
   Big Sorting
   
 Description:
-  Consider an array of numeric strings where each string is a positive number with anywhere from  to  digits. Sort the array's elements in non-decreasing, or ascending order of their integer values and return the sorted array.
+  Consider an array of numeric strings where each string is a positive number with anywhere from  to  digits. 
+  Sort the array's elements in non-decreasing, or ascending order of their integer values and return the sorted array.
 
   Example
 
@@ -48,7 +49,8 @@ Description:
   31415926535897932384626433832795
   Explanation 0
 
-  The initial array of strings is . When we order each string by the real-world integer value it represents, we get:
+  The initial array of strings is . 
+  When we order each string by the real-world integer value it represents, we get:
 
   We then print each value on a new line, from smallest to largest.
 
@@ -81,5 +83,19 @@ Link:
 
 // Solutions:
 // Solution1:
+const bigSorting = unsorted => 
+unsorted.sort((a, b) => a.length == b.length ? a > b ? 1 : -1 : a.length - b.length);
+
+// Solution 2:
+function bigSorting(unsorted) {
+  return unsorted.sort((a, b) => {
+    if (a.length == b.length) {
+      return a > b ? 1 : -1;
+    }
+
+    return a.length - b.length;
+  });
+}
+
 
 
